@@ -222,7 +222,7 @@ $fecha_formateada = $datetime->format('Y-m-d\TH:i:s\Z');
 }
  
 Ruta:
-echo
+
 $payload= json_encode(['positions'=>$total]);
 
 
