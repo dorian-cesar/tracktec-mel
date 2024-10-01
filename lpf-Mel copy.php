@@ -1,4 +1,5 @@
 <?php
+
 date_default_timezone_set('America/Santiago');
 
 set_time_limit(1200);
@@ -222,13 +223,13 @@ $fecha_formateada = $datetime->format('Y-m-d\TH:i:s\Z');
 
 }
  
-Ruta:
+echo
 
 $payload= json_encode(['positions'=>$total]);
 
 
 
-include 'envio.php';
+//include 'envio.php';
 
 
 
