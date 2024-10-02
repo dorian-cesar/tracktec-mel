@@ -46,27 +46,18 @@ if (json_last_error() !== JSON_ERROR_NONE) {
 }
 
 // Extract token from response (assuming 'token' key exists)
-if (!isset($data['token'])) {
-  echo 'Missing token in response';
+if (!isset($data['data']['token'])) {
+   'Missing token in response';
   die();
 }
-$token = $data['token'];
+$token = $data['data']['token'];
 
 // Prepare SQL statement (prevent SQL injection)
-$sql = "UPDATE Token_tractec SET token = ? WHERE cliente = ?";
-$stmt = mysqli_prepare($mysqli, $sql);
+$sql = "UPDATE Token_tractec SET token = $token WHERE cliente = mel";
 
-// Bind parameters (securely handle potentially untrusted data)
-mysqli_stmt_bind_param($stmt, "s", $token);
+$resutaldo = mysqli_query($mysqli, $sql);
 
-// Execute prepared statement
-if (mysqli_stmt_execute($stmt)) {
- echo "Token successfully updated in database.";
-} else {
-echo "Error updating database: " . mysqli_error($conn);
-}
+//UPDATE `masgps`.`Token_tractec` SET `token` = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYm1zX3dpdCIsImlhdCI6MTcyNzgxMjMwOCwianRpIjoiYmQ0ZmE5OGMtYjRhZC00OTM0LTkyYzUtNmUzMjgzODNkZjRlIiwiZXhwIjoxNzI3ODk4NzA4fQ.fYVZebPRnVTlqb1G3-ROolhhOnCqIpYDOgZBrXnZeiAGOg0Bs1ayQwQoaofxY4T-F48dY-tyYlM_ZCb5js_MiQ' WHERE (`id` = '1');
 
-// Close prepared statement and database connection
-mysqli_stmt_close($stmt);
-mysqli_close($mysqli);
-?>
+
+

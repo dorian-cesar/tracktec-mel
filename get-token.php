@@ -21,8 +21,9 @@ curl_setopt_array($curl, array(
   ),
 ));
 
-
+echo
 $response = curl_exec($curl);
+echo "<br>";
 
 
 

@@ -34,6 +34,8 @@ $data = mysqli_fetch_array($resutaldo2);
 
 $token = $data['token']; 
 
+
+
 //$token='eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYm1zX3dpdCIsImlhdCI6MTcyNzcyOTI1OSwianRpIjoiYmQ0ZmE5OGMtYjRhZC00OTM0LTkyYzUtNmUzMjgzODNkZjRlIiwiZXhwIjoxNzI3ODE1NjU5fQ.q5XoZePyJ4OXABkYqq8uKa_YRNL2gjsGI-YST7qkUkXvve5owV_sF2LvtFVBtjG3EMbvpn1JJzQnXhPO9yPUyQ';
 
 //header("refresh:2");
@@ -218,18 +220,22 @@ $fecha_formateada = $datetime->format('Y-m-d\TH:i:s\Z');
 
   $i++;
  
+goto Jump;
 
 
-
-}
+};
  
+
+
+Jump :
+
 echo
 
 $payload= json_encode(['positions'=>$total]);
 
+echo "<br>";
 
-
-//include 'envio.php';
+include 'envio.php';
 
 
 
