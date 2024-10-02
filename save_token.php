@@ -55,9 +55,7 @@ $token = $data['data']['token'];
 // Prepare SQL statement (prevent SQL injection)
 $sql = "UPDATE Token_tractec SET token = $token WHERE cliente = mel";
 
-$resutaldo = mysqli_query($mysqli, $sql);
 
-//UPDATE `masgps`.`Token_tractec` SET `token` = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYm1zX3dpdCIsImlhdCI6MTcyNzgxMjMwOCwianRpIjoiYmQ0ZmE5OGMtYjRhZC00OTM0LTkyYzUtNmUzMjgzODNkZjRlIiwiZXhwIjoxNzI3ODk4NzA4fQ.fYVZebPRnVTlqb1G3-ROolhhOnCqIpYDOgZBrXnZeiAGOg0Bs1ayQwQoaofxY4T-F48dY-tyYlM_ZCb5js_MiQ' WHERE (`id` = '1');
 
 
 
