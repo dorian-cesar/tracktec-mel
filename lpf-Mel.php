@@ -10,6 +10,8 @@ $pasw = "123";
 
 include "login/conexion.php";
 
+Loop:
+
 $consulta = "SELECT hash FROM masgps.hash where user='$user' and pasw='$pasw'";
 
 $resutaldo = mysqli_query($mysqli, $consulta);
@@ -229,6 +231,8 @@ $payload= json_encode(['positions'=>$total]);
 
 
 include 'envio.php';
+
+goto Loop;
 
 
 
