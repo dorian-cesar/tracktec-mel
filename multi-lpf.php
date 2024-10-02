@@ -4,7 +4,7 @@ set_time_limit(1200);
 
 $user = "BHP-Mel";
 $pasw = "123";
-include "login/conexion.php";
+include __DIR__."/login/conexion.php";
 
 $consulta = "SELECT hash FROM masgps.hash where user='$user' and pasw='$pasw'";
 $resutaldo = mysqli_query($mysqli, $consulta);
@@ -106,8 +106,8 @@ for ($i = 0; $i < count($curlArray); $i++) {
 
     $motor = $ignicion ? 1 : 0;
 
-    include 'driver.php';
-    include 'giroscopio.php';
+    include __DIR__.'/driver.php';
+    include __DIR__.'/giroscopio.php';
 
     $total[$i] = array(
         "proveedor_gps" => "Wit.la",
@@ -141,6 +141,7 @@ for ($i = 0; $i < count($curlArray); $i++) {
 }
 
 curl_multi_close($multiCurl);
-
+echo 
 $payload = json_encode(['positions' => $total]);
-include 'envio.php';
+
+//include 'envio.php';
